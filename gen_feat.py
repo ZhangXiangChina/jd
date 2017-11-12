@@ -152,7 +152,7 @@ def get_comments_product_feat(start_date, end_date):
     else:
         comments = pd.read_csv(comment_path)
         comment_date_end = end_date
-        comment_date_begin = comment_date[0]
+        comment_date_begin = comment_date[0]     # comment_date is a error
         for date in reversed(comment_date):
             if date < comment_date_end:
                 comment_date_begin = date
