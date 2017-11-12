@@ -151,8 +151,9 @@ def get_comments_product_feat(start_date, end_date):
         comments = pickle.load(open(dump_path))
     else:
         comments = pd.read_csv(comment_path)
+        comment_date = comments.dt    # 源代码缺少这一行了，应该是
         comment_date_end = end_date
-        comment_date_begin = comment_date[0]     # comment_date is a error
+        comment_date_begin = comment_date[0]
         for date in reversed(comment_date):
             if date < comment_date_end:
                 comment_date_begin = date
